@@ -53,8 +53,8 @@ public final class ScheduledExecutorTimer implements ScxTimer {
         return new TaskHandleImpl<>(future, taskStatus);
     }
 
-    private record TaskHandleImpl<V, E extends Throwable>(ScheduledFuture<?> future,
-                                                          AtomicReference<TaskStatus> taskStatus) implements TaskHandle<V, E> {
+    private record TaskHandleImpl<V, X extends Throwable>(ScheduledFuture<?> future,
+                                                          AtomicReference<TaskStatus> taskStatus) implements TaskHandle<V, X> {
 
         @Override
         public boolean cancel() {
@@ -64,7 +64,7 @@ public final class ScheduledExecutorTimer implements ScxTimer {
 
         @SuppressWarnings("unchecked")
         @Override
-        public V await() throws E {
+        public V await() throws X {
             try {
                 // 等待任务完成并获取结果
                 return (V) future.get(); // 这里会阻塞直到任务完成
@@ -79,7 +79,7 @@ public final class ScheduledExecutorTimer implements ScxTimer {
                     cause = cause.getCause();
                 }
                 // 抛出原始异常
-                throw (E) cause;
+                throw (X) cause;
             } catch (CancellationException e) {
                 throw new IllegalStateException("Task was cancelled", e);
             }
@@ -119,13 +119,13 @@ public final class ScheduledExecutorTimer implements ScxTimer {
 
         @SuppressWarnings("unchecked")
         @Override
-        public E exception() {
+        public X exception() {
             var e = future.exceptionNow();
             // 处理 包装异常
             if (e instanceof WrapperRuntimeException) {
                 e = e.getCause();
             }
-            return (E) e;
+            return (X) e;
         }
 
     }
