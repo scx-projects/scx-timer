@@ -1,7 +1,7 @@
 package cool.scx.timer;
 
-import cool.scx.functional.ScxCallable;
-import cool.scx.functional.ScxRunnable;
+import cool.scx.function.CallableX;
+import cool.scx.function.RunnableX;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -21,7 +21,7 @@ public final class ScheduledExecutorTimer implements ScxTimer {
     }
 
     @Override
-    public <E extends Throwable> TaskHandle<Void, E> runAfter(ScxRunnable<E> action, long delay, TimeUnit unit) {
+    public <X extends Throwable> TaskHandle<Void, X> runAfter(RunnableX<X> action, long delay, TimeUnit unit) {
         var taskStatus = new AtomicReference<>(PENDING);
         var future = executor.schedule(() -> {
             taskStatus.set(RUNNING);
@@ -37,7 +37,7 @@ public final class ScheduledExecutorTimer implements ScxTimer {
     }
 
     @Override
-    public <V, E extends Throwable> TaskHandle<V, E> runAfter(ScxCallable<V, E> action, long delay, TimeUnit unit) {
+    public <V, X extends Throwable> TaskHandle<V, X> runAfter(CallableX<V, X> action, long delay, TimeUnit unit) {
         var taskStatus = new AtomicReference<>(PENDING);
         var future = executor.schedule(() -> {
             taskStatus.set(RUNNING);

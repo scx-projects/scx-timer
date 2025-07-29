@@ -71,8 +71,8 @@
 
         <dependency>
             <groupId>cool.scx</groupId>
-            <artifactId>scx-functional</artifactId>
-            <version>${scx-functional.version}</version>
+            <artifactId>scx-function</artifactId>
+            <version>${scx-function.version}</version>
         </dependency>
 
         <!-- TestNG 测试包 -->
@@ -88,7 +88,7 @@
     <properties>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <scx-functional.version>4.0.1</scx-functional.version>
+        <scx-function.version>0.0.1</scx-function.version>
         <testng.version>7.10.2</testng.version>
 
     </properties>

@@ -1,7 +1,7 @@
 package cool.scx.timer;
 
-import cool.scx.functional.ScxCallable;
-import cool.scx.functional.ScxRunnable;
+import cool.scx.function.CallableX;
+import cool.scx.function.RunnableX;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,8 +11,8 @@ import java.util.concurrent.TimeUnit;
 /// @version 0.0.1
 public interface ScxTimer {
 
-    <E extends Throwable> TaskHandle<Void, E> runAfter(ScxRunnable<E> action, long delay, TimeUnit unit);
+    <X extends Throwable> TaskHandle<Void, X> runAfter(RunnableX<X> action, long delay, TimeUnit unit);
 
-    <V, E extends Throwable> TaskHandle<V, E> runAfter(ScxCallable<V, E> action, long delay, TimeUnit unit);
+    <V, X extends Throwable> TaskHandle<V, X> runAfter(CallableX<V, X> action, long delay, TimeUnit unit);
 
 }
