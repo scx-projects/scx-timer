@@ -12,7 +12,7 @@
 
     <artifactId>scx-timer</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>SCX Timer</name>
     <url>https://github.com/scx-projects/scx-timer</url>
