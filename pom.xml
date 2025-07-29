@@ -12,10 +12,10 @@
 
     <artifactId>scx-timer</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>SCX Timer</name>
-    <url>https://github.com/scx567888/scx-timer</url>
+    <url>https://github.com/scx-projects/scx-timer</url>
     <description>
         SCX Timer
     </description>
@@ -31,14 +31,14 @@
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://github.com/scx567888/scx-timer/blob/master/LICENSE</url>
+            <url>https://github.com/scx-projects/scx-timer/blob/master/LICENSE</url>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/scx567888/scx-timer.git</connection>
-        <developerConnection>scm:git:https://github.com/scx567888/scx-timer.git</developerConnection>
-        <url>https://github.com/scx567888/scx-timer</url>
+        <connection>scm:git:https://github.com/scx-projects/scx-timer.git</connection>
+        <developerConnection>scm:git:https://github.com/scx-projects/scx-timer.git</developerConnection>
+        <url>https://github.com/scx-projects/scx-timer</url>
     </scm>
 
     <build>
@@ -71,8 +71,8 @@
 
         <dependency>
             <groupId>cool.scx</groupId>
-            <artifactId>scx-functional</artifactId>
-            <version>${scx-functional.version}</version>
+            <artifactId>scx-function</artifactId>
+            <version>${scx-function.version}</version>
         </dependency>
 
         <!-- TestNG 测试包 -->
@@ -88,7 +88,7 @@
     <properties>
 
         <!-- *********************** 以下为依赖包版本 *********************** -->
-        <scx-functional.version>4.0.1</scx-functional.version>
+        <scx-function.version>0.0.1</scx-function.version>
         <testng.version>7.10.2</testng.version>
 
     </properties>
