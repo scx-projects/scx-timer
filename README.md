@@ -1,5 +1,6 @@
-# SCX Timer
-
+<p align="center">
+    <img src="https://scx.cool/scx-logo/scx-timer-logo.svg" width="300px" alt="scx-timer-logo"/>
+</p>
 <p align="center">
     <a target="_blank" href="https://github.com/scx-projects/scx-timer/actions/workflows/ci.yml">
         <img src="https://github.com/scx-projects/scx-timer/actions/workflows/ci.yml/badge.svg" alt="CI"/>
